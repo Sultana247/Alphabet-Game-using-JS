@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Alphabet Game</title>
+    <!-- tailwind and daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-
+   
+    <main class="min-h-screen bg-[#1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center">
         
-    </header>
-    <main>
+        
+            <!-- home page -->
+            <section class="home-page text-white hidden">
+            
+                <div class="flex flex-col gap-8 justify-center items-center  min-h-svh">
+                    <h1 class="anton-regular text-[120px] ">ALPHABET CLASH</h1>
+                    <p class="font-medium text-2xl poppins-font">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                    <button class="btn bg-white text-black poppins-font font-semibold text-2xl rounded-lg p-7">Play Now</button>
+                </div>
+            
+        </section>
+        <!-- play game page -->
+        <section class="play-game">
 
+        </section>
+        <!-- display score section -->
+        <section class="score-page">
+
+        </section>
+      
     </main>
     <footer>
 
