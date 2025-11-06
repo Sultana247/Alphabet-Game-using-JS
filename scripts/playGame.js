@@ -1,5 +1,8 @@
 function keyboardButtonPressed(event){
     const playerPressed = event.key;
+    if(playerPressed === 'Escape'){
+        gameOver();
+    }
     const targetEvent = document.getElementById('key');
     const targetKey = targetEvent.innerText;
     const exactKey = targetKey.toLowerCase();
@@ -30,7 +33,14 @@ function keyboardButtonPressed(event){
         const newLife = lifeValue - 1;
 
         currentLife.innerText = newLife;
+
+        if(newLife === 0){
+            gameOver();
+            
+        }
     }
+
+
 }
 
 document.addEventListener('keyup', keyboardButtonPressed);
@@ -43,6 +53,29 @@ function continueGame(){
 
 function playPage(){
      hideElementByID('home-page');
+     hideElementByID('score-page');
      displayElementByID('play-game');
+    // reset life 
+    setElementById('current-life', 5);
+    // reset score
+    setElementById('current-score', 0);
+    
      continueGame();
+}
+function gameOver(){
+    hideElementByID('play-game');
+    displayElementByID('score-page');
+    // set the final score
+    const finalScore = document.getElementById('current-score');
+    const finalValue = finalScore.innerText;
+    setElementById('final-score', finalValue);
+
+    // clear current alphabet color
+    const currentAlphabet = document.getElementById('key');
+    const alpha = currentAlphabet.innerText;
+   
+    removeColorbyId(alpha);
+    
+    
+
 }
