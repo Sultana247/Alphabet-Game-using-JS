@@ -21,7 +21,11 @@ function setElementById(Id, final){
     element.innerText = final;
 }
 
-function changeColorbyId(Id){
+function addColorbyId(Id){
     const key = document.getElementById(Id);
     key.classList.add('bg-orange-400');
+}
+function removeColorbyId(Id){
+    const key = document.getElementById(Id);
+    key.classList.remove('bg-orange-400');
 }

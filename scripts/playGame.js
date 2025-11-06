@@ -1,9 +1,48 @@
+function keyboardButtonPressed(event){
+    const playerPressed = event.key;
+    const targetEvent = document.getElementById('key');
+    const targetKey = targetEvent.innerText;
+    const exactKey = targetKey.toLowerCase();
+    console.log(playerPressed, exactKey);
 
+    if(playerPressed === exactKey){
+        console.log('Right key pressed');
+        console.log('you have pressed ', exactKey);
+
+// update score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreValue = currentScoreElement.innerText;
+      
+        const scoreValue = parseInt(currentScoreValue);
+       
+        const newScore = scoreValue + 1;
+        
+        currentScoreElement.innerText = newScore;
+
+        continueGame();
+        removeColorbyId(exactKey);
+    }
+    else{
+        console.log('please press the right key!!!');
+        const currentLife = document.getElementById('current-life');
+        const currentLifeValue =currentLife.innerText;
+        const lifeValue = parseInt(currentLifeValue);
+        const newLife = lifeValue - 1;
+
+        currentLife.innerText = newLife;
+    }
+}
+
+document.addEventListener('keyup', keyboardButtonPressed);
+
+function continueGame(){
+    const ranAlpha = randomAlpha();
+     setElementById('key', ranAlpha);
+     addColorbyId(ranAlpha);
+}
 
 function playPage(){
      hideElementByID('home-page');
      displayElementByID('play-game');
-     const ranAlpha = randomAlpha();
-     setElementById('key', ranAlpha);
-     changeColorbyId(ranAlpha);
+     continueGame();
 }
