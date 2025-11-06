@@ -4,38 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Alphabet Game</title>
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/653300f23e.js" crossorigin="anonymous"></script>
     <!-- tailwind and daisy ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+<body class="poppins-font">
    
     <main class="min-h-screen bg-[#1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center">
         
         
             <!-- home page -->
-            <section class="home-page text-white hidden">
+            <section id="home-page" class="home-page text-white ">
             
                 <div class="flex flex-col gap-8 justify-center items-center  min-h-svh">
                     <h1 class="anton-regular text-[120px] ">ALPHABET CLASH</h1>
                     <p class="font-medium text-2xl poppins-font">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                    <button class="btn bg-white text-black poppins-font font-semibold text-2xl rounded-lg p-7">Play Now</button>
+                    <button onclick="playPage()" class="btn bg-white text-black poppins-font font-semibold text-2xl rounded-lg p-7">Play Now</button>
                 </div>
             
         </section>
         <!-- play game page -->
-        <section class="play-game">
-
+         
+        <section id="play-game" class=" hidden">
+            <div class="flex flex-col gap-16  items-center">
+                <!-- screen -->
+                    <div class="w-[230px] md:w-[1100px] mt-24 h-[450px] flex justify-center bg-[#FFFFFFB3] border-[20px] border-[#010313CC] rounded-2xl">
+                        <p class="bg-[#010313CC] text-white h-14 py-4 px-7 rounded-sm top-">Don't watch keyboard  while playing...</p>
+                    </div>
+                <!-- keyboard -->
+                 <div class="flex flex-col gap-y-3">
+                    <div class="my-1 flex w-full justify-center gap-2">
+                        <kbd class="kbd text-2xl py-4 px-5">q</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">e</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">w</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">r</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">t</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">y</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">u</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">i</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">o</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">p</kbd>
+                        </div>
+                        <div class="my-1 flex w-full justify-center gap-2">
+                        <kbd class="kbd text-2xl py-4 px-5">a</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">s</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">d</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">f</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">g</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">h</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">j</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">k</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">l</kbd>
+                        </div>
+                        <div class="my-1 flex w-full justify-center gap-2">
+                        <kbd class="kbd text-2xl py-4 px-5">z</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">x</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">c</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">v</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">b</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">n</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">m</kbd>
+                        <kbd class="kbd text-2xl py-4 px-5">/</kbd>
+                    </div>
+                 </div>
+                 <!-- like share button -->
+                  <div class="flex justify-between w-[230px] md:w-[1100px] ">
+                    <button class="btn bg-[#894189] border-0 rounded-3xl px-8 py-4 text-white font-medium text-lg">
+                        Like
+                        <i class="fa-solid fa-heart-circle-plus" style="color: #ffffff;"></i>
+                        1
+                    </button>
+                    <button class="btn bg-[#360490] border-0 rounded-3xl px-8 py-4 text-white font-medium text-lg">
+                        score
+                        <i class="fa-solid fa-sack-dollar" tyle="color: #ffffff;"></i>
+                        1
+                    </button>
+                  </div>
+            </div>
+        
+            
+             
         </section>
         <!-- display score section -->
-        <section class="score-page">
-
+        <section class="score-page hidden">
+            <div class=" h-full ">
+                <div class="flex flex-col gap-8 text-white min-h-svh justify-center items-center">
+                    <div class="bg-[#FFFFFF33] flex flex-col gap-8 text-center px-12 py-11 rounded-lg">
+                        <h1 class="anton-regular text-6xl font-semibold">Score : <span class="font-medium">14</span></h1>
+                    <button class="btn bg-white text-black poppins-font font-semibold text-2xl rounded-lg p-7">Play Again</button>
+                    <p class="font-medium text-xl poppins-font">Practice will make you Pro</p>
+                    </div>
+                </div>
+            </div>
         </section>
       
     </main>
     <footer>
 
     </footer>
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/playGame.js"></script>
 </body>
 </html>
